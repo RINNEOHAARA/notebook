@@ -1,0 +1,86 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+0.0.0.0 https://account.jetbrains.com:443
+127.0.0.1       activate.navicat.com
+# GitHub Start 
+# GitHub Start 
+52.74.223.119 github.com
+52.74.223.119 gist.github.com
+52.74.223.119 assets-cdn.github.com
+52.74.223.119 raw.githubusercontent.com
+52.74.223.119 gist.githubusercontent.com
+52.74.223.119 cloud.githubusercontent.com
+52.74.223.119 camo.githubusercontent.com
+52.74.223.119 avatars0.githubusercontent.com
+52.74.223.119 avatars1.githubusercontent.com
+52.74.223.119 avatars2.githubusercontent.com
+52.74.223.119 avatars3.githubusercontent.com
+52.74.223.119 avatars4.githubusercontent.com
+52.74.223.119 avatars5.githubusercontent.com
+52.74.223.119 avatars6.githubusercontent.com
+52.74.223.119 avatars7.githubusercontent.com
+52.74.223.119 avatars8.githubusercontent.com 
+
+
+13.229.188.59 github.com
+13.229.188.59 gist.github.com
+13.229.188.59 assets-cdn.github.com
+13.229.188.59 raw.githubusercontent.com
+13.229.188.59 gist.githubusercontent.com
+13.229.188.59 cloud.githubusercontent.com
+13.229.188.59 camo.githubusercontent.com
+13.229.188.59 avatars0.githubusercontent.com
+13.229.188.59 avatars1.githubusercontent.com
+13.229.188.59 avatars2.githubusercontent.com
+13.229.188.59 avatars3.githubusercontent.com
+13.229.188.59 avatars4.githubusercontent.com
+13.229.188.59 avatars5.githubusercontent.com
+13.229.188.59 avatars6.githubusercontent.com
+13.229.188.59 avatars7.githubusercontent.com
+13.229.188.59 avatars8.githubusercontent.com
+
+
+
+13.250.177.223     github.com
+13.250.177.223     gist.github.com
+13.250.177.223     assets-cdn.github.com
+13.250.177.223     raw.githubusercontent.com
+13.250.177.223 gist.githubusercontent.com
+13.250.177.223 cloud.githubusercontent.com
+13.250.177.223 camo.githubusercontent.com
+13.250.177.223 avatars0.githubusercontent.com
+13.250.177.223 avatars1.githubusercontent.com
+13.250.177.223 avatars2.githubusercontent.com
+13.250.177.223 avatars3.githubusercontent.com
+13.250.177.223 avatars4.githubusercontent.com
+13.250.177.223 avatars5.githubusercontent.com
+13.250.177.223 avatars6.githubusercontent.com
+13.250.177.223 avatars7.githubusercontent.com
+13.250.177.223 avatars8.githubusercontent.com
+
+
+​
+# GitHub End 
+#52.74.223.119    github.com
+#13.229.188.59    github.com
+#13.250.177.223   github.com
+# GitHub End
