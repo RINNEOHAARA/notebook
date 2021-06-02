@@ -48,7 +48,9 @@
 
 <body>
     <div id="notebook">
-        <div class="notebook"></div>
+        <div class="notebook">
+            <button v-on:click="showInfo">add note</button>
+        </div>
         <div class="input">
             <textarea v-model="content"></textarea>
         </div>
@@ -64,7 +66,8 @@
         var vm=new Vue({
             el:"#notebook",
             data:{
-                content:''
+                content:'',
+                notes:[],
             },
             computed:{
                 markdownPreview(){
@@ -79,6 +82,11 @@
             },
             created(){
                 this.content=localStorage.getItem('content') || "**you can write here**"
+            },
+            methods:{
+                showInfo(){
+                    console.log("add is loading")
+                }
             }
         })
     </script>
