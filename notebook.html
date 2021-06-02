@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/marked"></script>
+    <title>Markdown Editer</title>
+    <style>
+
+        body{
+            margin: 0;
+        }
+
+        #notebook{
+            display: flex;
+        }
+
+        .notebook,.input,.preview{
+            height:1000px;
+        }
+
+        .notebook{
+            background-color: bisque;
+            width: 20%;
+        }
+
+        textarea{
+            width: 98%;
+            height: 100%;
+            background-color: aquamarine
+        }
+
+        .input{
+            background-color: aquamarine;
+            width: 40%;
+        }
+    
+        .preview{
+            background-color: aqua;
+            width:40%;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div id="notebook">
+        <div class="notebook"></div>
+        <div class="input">
+            <textarea v-model="content"></textarea>
+        </div>
+        <div class="preview" v-html="markdownPreview">
+        </div>
+    </div>
+
+    <script>
+        // const html=marked('# hello')
+        // console.log(html)
+        // const html_strong=marked('**notice**')
+        // console.log(html_strong)
+        var vm=new Vue({
+            el:"#notebook",
+            data:{
+                content:''
+            },
+            computed:{
+                markdownPreview(){
+                    return marked(this.content)
+                }
+            },
+            watch:{
+                content(val,oldval){
+                    console.log("new: ",val," old: ",oldval)
+                    localStorage.setItem('content',val)
+                }
+            },
+            created(){
+                this.content=localStorage.getItem('content') || "**you can write here**"
+            }
+        })
+    </script>
+
+</body>
+
+</html>
