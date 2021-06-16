@@ -1,0 +1,47 @@
+        body {
+            margin: 0;
+        }
+
+        #notebook {
+            display: flex;
+        }
+
+        .notebook,
+        .input,
+        .preview {
+            height: 1000px;
+        }
+
+        .notebook {
+            background-color: bisque;
+            width: 20%;
+        }
+
+        textarea {
+            width: 98%;
+            height: 100%;
+            background-color: aquamarine
+        }
+
+        .input {
+            background-color: aquamarine;
+            width: 40%;
+        }
+
+        .preview {
+            background-color: aqua;
+            width: 40%;
+        }
+
+        button ,.note.selected{
+            background: #40b883;
+            height: 30px;
+        }
+
+        .note{
+            height: 30px;
+            background-color: coral;
+            border:0.5px solid white;
+            margin-top: 1px;
+            text-align: center;
+        }

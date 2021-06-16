@@ -7,100 +7,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/marked"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Markdown Editer</title>
-    <style>
-
-        body{
-            margin: 0;
-        }
-
-        #notebook{
-            display: flex;
-        }
-
-        .notebook,.input,.preview{
-            height:1000px;
-        }
-
-        .notebook{
-            background-color: bisque;
-            width: 20%;
-        }
-
-        textarea{
-            width: 98%;
-            height: 100%;
-            background-color: aquamarine
-        }
-
-        .input{
-            background-color: aquamarine;
-            width: 40%;
-        }
-    
-        .preview{
-            background-color: aqua;
-            width:40%;
-        }
-    
-    </style>
 </head>
 
 <body>
     <div id="notebook">
+
         <div class="notebook">
-            <button v-bind:title="notes.length" v-on:click="showInfo">add note</button>
+            <button v-bind:title="notes.length" v-on:click="addNote">Add Note</button>
+            <div class="note" v-for="note in notes" @click="selectNote(note)" :class="{selected: note===selectedNote}">
+                {{note.title}}
+            </div>
         </div>
-        <div class="input">
-            <textarea v-model="content"></textarea>
-        </div>
-        <div class="preview" v-html="markdownPreview">
-        </div>
+
+        <template v-if="selectedNote">
+
+            <div class="input">
+                <input type="text" placeholder="input new name" v-model="selectedNote.title">
+                <button @click="removeNote">delete</button>
+                <textarea v-model="selectedNote.content"></textarea>
+            </div>
+
+            <div class="preview" v-html="markdownPreview">
+            </div>
+
+        </template>
     </div>
 
-    <script>
-        // const html=marked('# hello')
-        // console.log(html)
-        // const html_strong=marked('**notice**')
-        // console.log(html_strong)
-        var vm=new Vue({
-            el:"#notebook",
-            data:{
-                content:'',
-                notes:[],
-            },
-            computed:{
-                markdownPreview(){
-                    return marked(this.content)
-                }
-            },
-            watch:{
-                content(val,oldval){
-                    console.log("new: ",val," old: ",oldval)
-                    localStorage.setItem('content',val)
-                }
-            },
-            created(){
-                this.content=localStorage.getItem('content') || "**you can write here**"
-            },
-            methods:{
-                showInfo(){
-                    console.log("add is loading")
-                    const time=Date.now()
-                    console.log(String(time))
-                    const note={
-                        id:String(time),
-                        title:'new note'+(this.notes.length+1),
-                        content:'**hello**',
-                        created : time,
-                        favorite:false,
+    <script src="./notebook.js"></script>
 
-                    }
-                    this.notes.push(note)
-                }
-            }
-        })
-    </script>
+   
 
 </body>
 
